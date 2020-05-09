@@ -1,7 +1,7 @@
 /**
  * Skillspire 2020 Final Project: Reminder App
  *
- * last updated: May 8th, 2020
+ * last updated: May 9th, 2020
  *
  * @author: Cameron Imanpour (CIMAN01@github.com)
  *
@@ -47,6 +47,9 @@ public class Controller {
     private TextAreaLimited notes;
     @FXML
     private Button saveButton;
+
+    // a boolean variable to keep track of whether a file has been created or not
+    public static boolean hasCreatedAFile = false;
 
 
     // initialize is always the first method that gets invoked in the controller
@@ -104,6 +107,9 @@ public class Controller {
                         + amPMTime.getValue() + "\nTask repetition: " + "task will be repeated "                          // max Chars - preferred value 59
                         + taskRepetition.getValue() + " time(s)" + "\n\nNotes (optional): \n" + WrapStrings.splitIntoLines(notes.getText(), 59)
                         + "\n______________________________________________________________________________________________\n");
+
+                // set hasWritten to true after creating a file
+                hasCreatedAFile = true;
 
                 // invoke this method to invoke another method in second controller to show schedule (from text file) in a Label window
                 showNewLabel();
