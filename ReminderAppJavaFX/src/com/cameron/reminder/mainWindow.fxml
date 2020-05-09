@@ -1,0 +1,123 @@
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import com.cameron.reminder.model.TextFieldLimited?>
+<?import com.cameron.reminder.model.TextAreaLimited?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+
+<!--
+    GridPane is like a  spreadsheet - you can specify which row and column each
+    element sits on.
+    Everything inside this GridPane has a center alignment.
+-->
+
+<GridPane fx:id="mainGridPane" fx:controller="com.cameron.reminder.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10" vgap="10">
+
+    <!--  All elements in GridPane will have padding of 40px on all sides  -->
+    <padding>
+        <Insets top="40" right="40" left="40" bottom="40"/>
+    </padding>
+
+    <!-- Header Label -->
+    <Label text="Set a Reminder" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5" GridPane.rowSpan="1" GridPane.halignment="CENTER">
+        <font>
+            <Font name="Arial" size="24"/>
+        </font>
+        <!--  Label will have a padding of 40px on all sides  -->
+        <GridPane.margin>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </GridPane.margin>
+    </Label>
+
+    <!--  Task Name Label  -->
+    <Label text="Choose a task : " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+    <!--  Name TextField  -->
+    <TextFieldLimited fx:id="taskReminder" onKeyReleased="#enableSubmit" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="3" maxWidth="600"/>
+
+
+    <!-- DatePicker allows selection of a date but also allows the user to edit -->
+    <!--  Task Date Label  -->
+    <Label text="Pick a date : " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <!--  DatePicker  -->
+    <DatePicker fx:id="taskDate" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3" maxWidth="130"/>
+
+
+    <!-- Spinner allows selection of a time but also allows the user to edit -->
+    <!--  Task Time Label  -->
+    <Label text="Pick a time : " GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <!--  Task Time Hour Spinner  -->
+    <Spinner fx:id="taskTimeHour" GridPane.rowIndex="3" GridPane.columnIndex="1" maxWidth="60"
+             initialValue="06" min="01" max="12" amountToStepBy="01" editable="true"/>
+    <!--  Task Time Minute Spinner  -->
+    <Spinner fx:id="taskTimeMin" GridPane.rowIndex="3" GridPane.columnIndex="2" maxWidth="60" initialValue="00" min="00" max="59" amountToStepBy="01" editable="true"/>
+
+
+    <!-- We can use ComboBox to create a dropdown menu -->
+    <!--  Combo Box  -->
+    <ComboBox fx:id="amPMTime" GridPane.rowIndex="3" GridPane.columnIndex="3" GridPane.columnSpan="3">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="AM"/>
+                <String fx:value="PM"/>
+            </FXCollections>
+        </items>
+        <!-- value allows us to set a default value -->
+        <value>
+            <String fx:value="AM"/>
+        </value>
+    </ComboBox>
+
+
+    <!--  Task Repetition Label  -->
+    <Label text="Repeat # of times: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <!--  Task Repetition Spinner  -->
+    <Spinner fx:id="taskRepetition" GridPane.rowIndex="4" GridPane.columnIndex="1"
+             editable="true" min="0" max="100"  maxWidth="60"/>
+
+
+    <!--  Notes Label  -->
+    <Label text="Notes (optional): " GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <!--  Notes TextField  -->
+    <TextAreaLimited fx:id="notes" wrapText="true" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="3" maxWidth="600"/>
+
+
+    <!-- Submit Button -->
+    <!-- We'll create the save method in the controller -->
+    <!--
+        By assigning a value to onAction, we define what happens when a
+        user clicks the button. Here it invokes the submit() method.
+     -->
+    <Button fx:id="saveButton" text="Save" defaultButton="true" onAction="#save" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.halignment="CENTER"
+            GridPane.columnSpan="5" GridPane.rowSpan="2">
+        <GridPane.margin>
+            <Insets top="20" right="0" bottom="20" left="0"/>
+        </GridPane.margin>
+    </Button>
+
+
+    <!-- Clear Button -->
+    <!-- We'll create the clear method in the controller -->
+    <!--
+        By assigning a value to onAction, we define what happens when a
+        user clicks the button. Here it invokes the clear() method.
+     -->
+    <Button text="Clear" defaultButton="true" onAction="#clear"
+            GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.columnSpan="5" GridPane.rowSpan="2">
+        <GridPane.margin>
+            <Insets top="20" right="0" bottom="20" left="0"/>
+        </GridPane.margin>
+    </Button>
+
+</GridPane>
+
+

@@ -1,0 +1,16 @@
+
+______________________________________________________________________________________________
+
+Scheduled Reminder Details:
+
+Task: Present my Project 
+Date: 2020-05-09
+Time: 9:30 AM
+Task repetition: task will be repeated 1 time(s)
+
+Notes (optional): 
+I will demonstrate how my JavaFX reminder app works during 
+class tomorrow. I did manage fix a previous logical flaw 
+where the notes would be created when clicking cancel 
+button during confirmation. 
+______________________________________________________________________________________________

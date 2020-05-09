@@ -1,0 +1,21 @@
+
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<!-- StackPane -->
+<StackPane fx:id="mainPane" fx:controller="com.cameron.reminder.SecondController" xmlns:fx="http://javafx.com/fxml"
+           prefHeight="500" prefWidth="700" style="-fx-background-color: white;">
+
+    <!-- Header Label -->
+    <Label fx:id="label" text="A scheduled reminder has been saved to a text file!" textAlignment="JUSTIFY"
+           textFill="black" style="-fx-background-color: white;"/>
+
+    <!-- Header Label -->
+    <!-- Using text="...&#10;" will create a new line just like "\n" -->
+<!--    <Label fx:id="label" text="The following has been saved to a text file:&#10;" textAlignment="CENTER" StackPane.alignment="CENTER"/>-->
+
+</StackPane>
+
+
