@@ -108,7 +108,7 @@ public class Controller {
                         + taskRepetition.getValue() + " time(s)" + "\n\nNotes (optional): \n" + WrapStrings.splitIntoLines(notes.getText(), 59)
                         + "\n______________________________________________________________________________________________\n");
 
-                // set hasWritten to true after creating a file
+                // set boolean variable to true after creating a file
                 hasCreatedAFile = true;
 
                 // invoke this method to invoke another method in second controller to show schedule (from text file) in a Label window
