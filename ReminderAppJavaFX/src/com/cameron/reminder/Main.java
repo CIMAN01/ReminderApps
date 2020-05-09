@@ -1,7 +1,7 @@
 /**
  * Skillspire 2020 Final Project: Reminder App
  *
- * last updated: May 8th, 2020
+ * last updated: May 9th, 2020
  *
  * @author: Cameron Imanpour (CIMAN01@github.com)
  *
@@ -40,9 +40,18 @@ public class Main extends Application {
     // stop() method is run when the app is closed
     @Override
     public void stop() {
-        System.out.println("\na new schedule has been created as show below: ");
-        // print reminder schedule to console (from reminder.txt) once app is closed
-        FileService.readFromTextFile();
+        // if OK confirmation has been selected and app is closed
+        if (Controller.hasCreatedAFile) {
+            // print to console that a new text file has been created
+            System.out.println("\na new schedule has been created as show below: ");
+            // print reminder schedule to console (from reminder.txt) once app is closed
+            FileService.readFromTextFile();
+        }
+        // if cancel button is clicked
+        else {
+            // print to console that no new file has been created
+            System.out.println("\nno new file has been been created\n");
+        }
     }
 
     // launch app
