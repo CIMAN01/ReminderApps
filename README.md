@@ -1,10 +1,8 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Reminders Applications created by Cameron Imanpour 
 
-/////////////// Reminders Application created by Cameron Imanpour (CIMAN01@github.com) //////////////////////
+The reminder apps have similar functionlity, but one uses a graphical user interface (coded in javaFX), while the other is console-based (coded in Java.)
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-This JavaFX application that sets up a scheduled reminder for a task.
+The JavaFX application that sets up a scheduled reminder for a task.
 
 The user will schedule a specific task, with a date and time, how many times they wish to repeat that
 specific task, and optionally enter any additional notes.
@@ -21,4 +19,7 @@ When the app is restarted the previous stored text file will appear in the conso
 The application uses several helper classes to create alerts, manipulate Strings, limit inputs, and finally
 create and read text files.
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+The console application sets up a scheduled reminder for a task. The user will schedule a specific task, with a time and date, how many times they wish to repeat that specific task, and optionally enter any additional notes. 
+
+All this will be stored locally and the user can either confirm the schedule or start over. Once the schedule is confirm, the data will stored will locally to a text file (and then uses a method that "pretends" to upload that text file to email servers.) 
