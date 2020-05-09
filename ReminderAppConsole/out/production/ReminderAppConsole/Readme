@@ -1,0 +1,32 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+////////// Reminders Application created by Cameron Imanpour (CIMAN01@github.com) /////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+A console application that sets up a scheduled reminder for a task.
+
+The user will schedule a specific task, with a time and date, how many times they wish
+
+to repeat that specific task, and optionally enter any additional notes. All this will be
+
+stored locally and the user can either confirm the schedule or start over. Once the schedule
+
+is confirm, the data stored will be uploaded and send to the user's email account.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Flowchart:
+
+1) - We ask user if they want set a reminder - yes/no?
+
+a - if yes, we ask for all the necessary info
+b - if no, we quit program
+
+2) - once all necessary info entered, we ask for confirmation: yes/no?
+
+a - if yes, upload reminder to servers (using api)
+b - if no, we start over
+
+////////////////////////////////////////////////////////////////////////////////////////////////

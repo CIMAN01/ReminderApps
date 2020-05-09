@@ -1,0 +1,7 @@
+////////////////// Scheduled Reminder //////////////////
+
+Task: coding
+Task date: 04/29/2020
+Task time: 06:00 PM
+Task repetition: task will be repeated 1 time(s)
+Additional notes: skillspire
